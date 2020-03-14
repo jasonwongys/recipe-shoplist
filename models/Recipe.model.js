@@ -3,24 +3,24 @@ const Schema = mongoose.Schema;
 
 const RecipeSchema = new Schema({
 
-    id: {
+    uri: {
         type: String,
-        required: true
     },
     recipeName: {
         type: String,
-        required: true
+        
     },
     image: {
         type: String,
-        required: true
-    },
-    instructions: {
-        type: String,
+        
     },
     ingredients: {
-        type: String
-    }
+        type: Array
+    },
+    // shoplists: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'shoplist'
+    // }]
 
     
 });

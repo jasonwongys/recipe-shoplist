@@ -3,6 +3,9 @@ const shoplistRoute = require('express-promise-router')();
 
 let ShopListController = require('../controllers/shoplist.controller');
 
+//All routes:
+//localhost:5000/shoplist/
+
 shoplistRoute.route('/')
     .get(ShopListController.index)
     .post(ShopListController.newShoplist);
@@ -13,15 +16,19 @@ shoplistRoute.route('/:id')
     .put(ShopListController.replaceShopList)
     .patch(ShopListController.updateShopList);
 
-//get all recipes added to the shop list
+//===============Relationships with Recipe mode=================
 
-shoplistRoute.route('/list/:id')
+//get all recipes added to the shop list ID
+
+shoplistRoute.route('/recipesList/:id')
     .get(ShopListController.getShoplistRecipes)
 
-// add recipe to the shop list 
-shoplistRoute.route('/recipe/:id/addRecipe')
+// add recipe to the shop list ID
+shoplistRoute.route('/addRecipe/:id')
     .post(ShopListController.addRecipeToShopList);
     
+
+//=============================================================
 // Delete shop list
 
 shoplistRoute.route('/:id').delete((req, res)=> {

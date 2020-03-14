@@ -16,7 +16,7 @@ let shoplistSchema = new Schema({
     },
     dateCreated: {
         type: Date,
-        required: true
+        
     },
     recipes: [{
         type: Schema.Types.ObjectId,

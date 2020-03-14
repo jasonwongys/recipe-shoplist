@@ -19,10 +19,14 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    shoplist: [{
-        type: Schema.Types.ObjectId,
-        ref: 'shoplist'
-    }]
+    // shoplist: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'shoplist'
+    // }],
+    recipe: {
+        type: Array,
+        ref: 'recipe'
+    }
     
 });
 

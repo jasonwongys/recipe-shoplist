@@ -21,10 +21,15 @@ const User = require("../../models/User.model");
 
 
 //Add recipe to user via user DB id
-userRoute.route('/recipe/:id')
-    .get(UsersController.getUserRecipes)
-    .post(UsersController.newUserRecipe);
 
+
+// userRoute.route('/shoplist/:id')
+//     .get(UsersController.getShopListByUser)
+//     .post(UsersController.newShopListByUser);
+
+userRoute.route('/recipe/:id')
+    .get(UsersController.getRecipesByUser)
+    .post(UsersController.addRecipeByUser);
 
 // When user registers for account, create a shopping list with ID
 userRoute.post("/register", (req, res) => {

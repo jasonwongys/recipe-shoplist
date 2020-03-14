@@ -46,10 +46,13 @@ module.exports = {
         res.status(200).json({success: true});
     },
 
+
+//===============Relationships with Recipe mode=================
+
     //get all recipes within the shoplist
     getShoplistRecipes: async (req, res,next) => {
         const { id } = req.params;
-        const shoplist = await (await ShopList.findById(id)).populate('Recipe');
+        const shoplist = await ShopList.findById(id).populate('Recipe');
 
         console.log("Shopping list " + shoplist.recipes)
 
@@ -58,16 +61,26 @@ module.exports = {
 
     //add recipe to shoplist
     addRecipeToShopList: async (req,res, next) => {
+        
         const { id } = req.params;
+        console.log("ID",id);
 
         let newRecipe = new Recipe(req.body);
+        console.log("newRecipe object: ",newRecipe);
 
-        const shoplist = await (await ShopList.findById(id)).populated('Recipe');
+        const shoplist = await ShopList.findById(id).populate('Recipe');
+        console.log("Shoplist",shoplist);
 
         newRecipe.shoplists = shoplist;
+        console.log("newRecipe.shoplists", newRecipe.shoplists);
 
+        //console.log("Shoplist recipes", shoplist.recipes);
+        
         await newRecipe.save();
+        shoplist.recipes.push(newRecipe);
 
-        res.status(200).json(newRecipe);
+        await shoplist.save();
+
+        res.status(201).json(newRecipe);
     }
 }
