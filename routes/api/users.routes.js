@@ -28,9 +28,14 @@ const User = require("../../models/User.model");
 //     .post(UsersController.newShopListByUser);
 
 userRoute.route('/recipe/:id')
-    .get(UsersController.getRecipesByUser)
-    .post(UsersController.addRecipeByUser);
+    .get(UsersController.getRecipesByUser) // get all recipes saved by user
+    .post(UsersController.addRecipeByUser)
+    .put(UsersController.updateRecipeForUser)
 
+// userRoute.route('/recipe/:id1/getSingleRecipe/:id2')
+//     .get(UsersController.getSingleRecipe);
+
+    
 // When user registers for account, create a shopping list with ID
 userRoute.post("/register", (req, res) => {
     // Form validation

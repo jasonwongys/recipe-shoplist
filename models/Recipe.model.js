@@ -3,9 +3,7 @@ const Schema = mongoose.Schema;
 
 const RecipeSchema = new Schema({
 
-    uri: {
-        type: String,
-    },
+    
     recipeName: {
         type: String,
         
@@ -17,10 +15,9 @@ const RecipeSchema = new Schema({
     ingredients: {
         type: Array
     },
-    // shoplists: [{
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'shoplist'
-    // }]
+    instructions: {
+        type: Array
+    }
 
     
 });

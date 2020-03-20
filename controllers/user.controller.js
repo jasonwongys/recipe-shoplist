@@ -1,5 +1,5 @@
 const User = require('../models/User.model')
-const ShopList = require('../models/ShopList.model');
+// const ShopList = require('../models/ShopList.model');
 const Recipe  = require('../models/Recipe.model')
 module.exports = {
 
@@ -38,12 +38,25 @@ module.exports = {
     //     //console.log("After save user recipes ",user);
     //     res.status(201).json(newShopList);
     // }
+
+
+    getSingleRecipe: async (req, res, next) => {
+        const { id1 } = req.params;
+        const { id2 } = req.params;
+        // const recipe = await User.collection("recipe").find({}, { } )
+        let userRecipes = await User.findById(id1, 'recipe',{_id: id2}, function (err, doc) {});
+
+        console.log("REcipe id",userRecipes);
+        // console.log("user: ",JSON.stringify(userRecipes));
+        res.status(200).json(userRecipes);
+    },
+
     getRecipesByUser: async (req,res,next) => {
         const { id } = req.params;
         const user = await User.findById(id).populate('Recipe');
         
         
-        console.log("user: " + user.recipe);
+        console.log("user: " + user.recipes);
         res.status(200).json(user);
     },
 
@@ -67,10 +80,23 @@ module.exports = {
         // Add Recipe to users array of recipes
         //console.log("recipes " + user.recipes);
         console.log("user recipes " + user);
-        user.recipe.push(newRecipe);
+        user.recipes.push(newRecipe);
         // Save the user
         await user.save();
         //console.log("After save user recipes ",user);
         res.status(201).json(newRecipe);
-    }
+    },
+
+    updateRecipeForUser: async (req, res,next) => {
+        const { id } = req.params;
+
+        const newRecipe = req.body;
+        const result = await User.findByIdAndUpdate(id, newRecipe);
+
+        console.log("Result", result);
+        res.status(200).json({success: true});
+    },
+
+
+
 }

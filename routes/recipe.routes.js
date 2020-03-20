@@ -11,10 +11,10 @@ recipeRoutes.route('/:id')
     .put(recipeController.replaceRecipe)
     .patch(recipeController.updateRecipe);
 
-recipeRoutes.route('/:id').delete((req,res) => {
+recipeRoutes.route('/:id').delete((req, res) => {
     Recipe.findByIdAndDelete(req.params.id)
-        .then(()=> res.json('Recipe Deleted'))
-        .catch(err => res.status(400).json('Error ', err));
+        .then(()=> res.json('Recipe deleted'))
+        .catch(err => res.status(400).json('Error', err));
 })
 
 module.exports = recipeRoutes;
