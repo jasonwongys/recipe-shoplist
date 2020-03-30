@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 const RecipeSchema = new Schema({
 
-    
+    recipeId: {
+        type:String
+    },
+
     recipeName: {
         type: String,
         
@@ -12,14 +15,18 @@ const RecipeSchema = new Schema({
         type: String,
         
     },
-    ingredients: {
-        type: Array
-    },
-    instructions: {
-        type: Array
-    }
+    // ingredients: {
+    //     type: Array
+    // },
+    // instructions: {
+    //     type: Array
+    // },
 
+    users: [{
+        type: Schema.Types.ObjectId,
+        ref: 'user'
+    }]
     
 });
-
-module.exports = Recipe = mongoose.model("recipe",RecipeSchema);
+const Recipe =mongoose.model("recipe",RecipeSchema);
+module.exports = Recipe;

@@ -23,14 +23,11 @@ const User = require("../../models/User.model");
 //Add recipe to user via user DB id
 
 
-// userRoute.route('/shoplist/:id')
-//     .get(UsersController.getShopListByUser)
-//     .post(UsersController.newShopListByUser);
-
-userRoute.route('/recipe/:id')
-    .get(UsersController.getRecipesByUser) // get all recipes saved by user
+userRoute.route('/recipes/:id')
+    .get(UsersController.getRecipesByUser)
     .post(UsersController.addRecipeByUser)
-    .put(UsersController.updateRecipeForUser)
+
+
 
 // userRoute.route('/recipe/:id1/getSingleRecipe/:id2')
 //     .get(UsersController.getSingleRecipe);

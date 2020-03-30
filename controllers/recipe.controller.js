@@ -31,37 +31,37 @@ module.exports = {
         res.status(200).json({success: true});
     },
 
-    // getBugAndProjects: async (req,res,next) => {
-    //     const { id } = req.params;
-    //     const bug = await Bug.findById(id).populate('project');
+    getRecipeAndUsers: async (req,res,next) => {
+        const { id } = req.params;
+        const recipe = await Recipe.findById(id).populate('user');
     
-    //     console.log("Bug: " + bug.bugs);
-    //     res.status(200).json(bug);
-    // },
+        console.log("recipe: " + recipe.recipes);
+        res.status(200).json(recipe);
+    },
 
-    // newRecipeProjects: async (req, res, next) => {
-    //     const { id } = req.params;
+    newRecipeUser: async (req, res, next) => {
+        const { id } = req.params;
 
-    //     let newBug  = new Bug(req.body);
+        let newRecipe  = new Recipe(req.body);
         
-    //     console.log("Req Body", req.body);
-    //     console.log('New bug', newBug);
+        console.log("Req Body", req.body);
+        console.log('New recipe', newRecipe);
 
-    //     const bug = await Bug.findById(id).populate('project');
-    //     console.log("New Bug bugs " + bug);
-    //     // Assign bug as bug's bug
-    //     console.log("Newbug bugs" + newBug.bugs);
-    //     newBug.bugs = bug;
+        const recipe = await Recipe.findById(id).populate('user');
+        console.log("New recipe recipes " + recipe);
+        // Assign recipe as recipe's recipe
+        console.log("newRecipe recipes" + newRecipe.recipes);
+        newRecipe.recipes = recipe;
 
-    //     await newBug.save();
-    //     // Add bug to bugs array of bugs
-    //     //console.log("Bugs " + bug.bugs);
-    //     console.log("Bug bugs " + bug);
-    //     bug.bugs.push(newBug);
-    //     // Save the bug
-    //     await bug.save();
-    //     //console.log("After save Bug bugs ",bug);
-    //     res.status(201).json(newBug);
-    
+        await newRecipe.save();
+        // Add recipe to recipes array of recipes
+        //console.log("recipes " + recipe.recipes);
+        console.log("recipe recipes " + recipe);
+        recipe.recipes.push(newRecipe);
+        // Save the recipe
+        await recipe.save();
+        //console.log("After save recipe recipes ",recipe);
+        res.status(201).json(newRecipe);
+    }
     
 }

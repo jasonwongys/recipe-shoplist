@@ -68,9 +68,9 @@ module.exports = {
         
         
         console.log("Req Body", req.body);
-        console.log('New Shoplist created', newRecipe);
+        console.log('New Recipe object posted', newRecipe);
 
-        const user = await User.findById(id).populate('Recipe');
+        const user = await User.findById(req.body.userID).populate('Recipe');
         console.log("New Recipe users " + user);
         // Assign user as Recipe's user
         console.log("newRecipe users" + newRecipe.users);
@@ -80,7 +80,9 @@ module.exports = {
         // Add Recipe to users array of recipes
         //console.log("recipes " + user.recipes);
         console.log("user recipes " + user);
-        user.recipes.push(newRecipe);
+
+        
+        user.recipes.push(newRecipe._id);
         // Save the user
         await user.save();
         //console.log("After save user recipes ",user);

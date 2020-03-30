@@ -11,6 +11,11 @@ recipeRoutes.route('/:id')
     .put(recipeController.replaceRecipe)
     .patch(recipeController.updateRecipe);
 
+
+recipeRoutes.route('/users/:id')
+    .get(recipeController.getRecipeAndUsers)
+    .post(recipeController.newRecipeUser)
+
 recipeRoutes.route('/:id').delete((req, res) => {
     Recipe.findByIdAndDelete(req.params.id)
         .then(()=> res.json('Recipe deleted'))
