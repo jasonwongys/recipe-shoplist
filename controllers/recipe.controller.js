@@ -14,6 +14,15 @@ module.exports = {
         res.status(200).json(recipe);
     },
 
+    newRecipe: async (req, res, next ) => {
+        
+        let newRecipe = new Recipe(req.body);
+        let recipe = await newRecipe.save();
+        res.status(200).json({
+            "Shopping List": "Shopping list added success" + recipe
+        })
+    },
+
     replaceRecipe: async(req, res,next) => {
         const { id } = req.params;
         const newRecipe = req.body;

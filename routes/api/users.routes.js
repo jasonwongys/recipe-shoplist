@@ -21,7 +21,8 @@ const User = require("../../models/User.model");
 
 
 //Add recipe to user via user DB id
-
+userRoute.route('/')
+    .get(UsersController.index)
 
 userRoute.route('/recipes/:id')
     .get(UsersController.getRecipesByUser)

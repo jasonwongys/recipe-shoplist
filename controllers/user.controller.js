@@ -39,6 +39,11 @@ module.exports = {
     //     res.status(201).json(newShopList);
     // }
 
+    index: async(req, res,next) => {
+        const user = await User.find({});
+        res.status(200).json(user);
+    },
+
 
     getSingleRecipe: async (req, res, next) => {
         const { id1 } = req.params;

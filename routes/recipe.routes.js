@@ -4,7 +4,8 @@ let recipeController = require('../controllers/recipe.controller')
 
 
 recipeRoutes.route('/')
-    .get(recipeController.index);
+    .get(recipeController.index)
+    .post(recipeController.newRecipe);
 
 recipeRoutes.route('/:id')
     .get(recipeController.getRecipe)

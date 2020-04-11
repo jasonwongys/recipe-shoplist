@@ -15,17 +15,34 @@ const RecipeSchema = new Schema({
         type: String,
         
     },
-    // ingredients: {
-    //     type: Array
-    // },
-    // instructions: {
-    //     type: Array
-    // },
-
-    users: [{
-        type: Schema.Types.ObjectId,
-        ref: 'user'
-    }]
+    ingredients: {
+        type: Array
+    },
+    instructions: {
+        type: Array
+    },
+    userid: {
+        type: String
+    },
+    vegetarian: {
+        type: Boolean
+    },
+    glutenFree: {
+        type: Boolean
+    },
+    vegan: {
+        type: Boolean
+    },
+    dairyFree: {
+        type: Boolean
+    },
+    healthScore: {
+        type: Number
+    }
+    // users: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'user'
+    // }]
     
 });
 const Recipe =mongoose.model("recipe",RecipeSchema);
