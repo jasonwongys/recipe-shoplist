@@ -5,6 +5,13 @@ const passport = require("passport");
 const cors = require("cors");
 const users = require("./routes/api/users.routes");
 const recipe = require("./routes/recipe.routes")
+const path = require("path")
+
+const secret = process.env.SECRET || "jasonwongysLocal"
+require("dotenv").config()
+
+
+mongoose.Promise = global.Promise;
 
 const app = express();
 app.use(cors());
@@ -16,6 +23,8 @@ app.use(
     })
 );
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "client", "build")))
+
 
 //DB config
 const db = require("./config/keys").mongoURI;
@@ -25,7 +34,7 @@ const db = require("./config/keys").mongoURI;
 //     .then(() => console.log("MongoDB connected"))
 //     .catch(err => console.log(err));
 
-mongoose.connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGOLAB_ONYX_URI || 'mongodb://127.0.0.1:27017/test', { useNewUrlParser: true })
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
 
@@ -44,5 +53,9 @@ app.use("/shoplist", shoplistRouter)
 app.use("/recipes",recipe);
 
 const port = process.env.PORT || 5000;
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.listen(port, ()=> console.log(`Server up and running at port ${port}`));
