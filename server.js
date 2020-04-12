@@ -38,6 +38,14 @@ mongoose.connect(process.env.MONGOLAB_ONYX_URI || 'mongodb://127.0.0.1:27017/tes
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
 
+const connection = mongoose.connection;
+
+
+connection.once('open',function() {
+        console.log("Mongo DB connected successfully");
+    })
+
+    
 
 const shoplistRouter = require('./routes/shoplist.routes');
 
