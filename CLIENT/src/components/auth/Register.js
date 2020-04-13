@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
 import './register.css';
+import axios from 'axios'
 
 
 class Register extends Component {
@@ -48,6 +49,17 @@ class Register extends Component {
             password: this.state.password,
             password2: this.state.password2
         };
+
+
+        axios.post('https://recipe-shoplist.herokuapp.com/api/users/register',newUser)
+            .then(response => console.log(response.data),
+            this.props.registerUser(newUser, this.props.history));
+
+        this.setState({
+            name: '',
+            email: '',
+            password: ''
+        })
         
         this.props.registerUser(newUser, this.props.history);
     };

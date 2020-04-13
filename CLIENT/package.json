@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "recipe-shoplist",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,7 +24,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "client-install": "npm install --prefix client",
+    "server": "node server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "proxy": "http://localhost:8000",
   "eslintConfig": {

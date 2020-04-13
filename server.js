@@ -34,7 +34,7 @@ const db = require("./config/keys").mongoURI;
 //     .then(() => console.log("MongoDB connected"))
 //     .catch(err => console.log(err));
 
-mongoose.connect('mongodb://127.0.0.1:27017/test', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/test', { useNewUrlParser: true })
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
 
@@ -63,7 +63,7 @@ app.use("/recipes",recipe);
 const port = process.env.PORT || 5000;
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "CLIENT", "build", "index.html"));
 });
 
 app.listen(port, ()=> console.log(`Server up and running at port ${port}`));
