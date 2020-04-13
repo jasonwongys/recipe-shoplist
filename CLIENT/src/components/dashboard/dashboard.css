@@ -1,0 +1,302 @@
+.container-fluid {
+    height: "100vh";
+}
+
+.carousel-inner { width:100%; height:800px; }
+
+
+
+
+.recepie_videoes_area {
+    
+    padding: 50px;
+}
+
+.dish_area {
+    padding: 50px;
+}
+
+.single_dish {
+    margin: 30px;
+}
+
+/* line 171, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+.recepie_videoes_area .videos_thumb {
+    position: relative;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 171, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+    .recepie_videoes_area .videos_thumb {
+      margin-top: 40px;
+    }
+  }
+  
+  /* line 176, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+  .recepie_videoes_area .videos_thumb .big_img {
+    padding-left: 100px;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 176, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+    .recepie_videoes_area .videos_thumb .big_img {
+      padding-left: 0;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 176, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+    .recepie_videoes_area .videos_thumb .big_img {
+      padding-left: 30px;
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    /* line 176, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+    .recepie_videoes_area .videos_thumb .big_img {
+      padding-left: 50px;
+    }
+  }
+  
+  /* line 187, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+  .recepie_videoes_area .videos_thumb .big_img img {
+    width: 100%;
+  }
+  
+  /* line 191, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+  .recepie_videoes_area .videos_thumb .small_thumb {
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+  
+  @media (max-width: 767px) {
+    /* line 191, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+    .recepie_videoes_area .videos_thumb .small_thumb {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 198, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+    .recepie_videoes_area .videos_thumb .small_thumb img {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    /* line 198, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+    .recepie_videoes_area .videos_thumb .small_thumb img {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* line 191, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+    .recepie_videoes_area .videos_thumb .small_thumb {
+      width: 120px;
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    /* line 191, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+    .recepie_videoes_area .videos_thumb .small_thumb {
+      width: 120px;
+    }
+  }
+  
+  /* line 213, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_recepie.scss */
+  .recepie_videoes_area .videos_thumb .small_thumb_2 {
+    position: absolute;
+    right: 68px;
+    bottom: -105px;
+  }
+
+  
+
+footer {
+    background-color: black;
+}
+
+
+.footer {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: #000000;
+}
+
+.footer .pro_border {
+    padding-top: 103px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #334A60;
+  }
+  
+  .footer .pro_border .lets_projects h3 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+  }
+  
+  
+  .footer .pro_border .lets_projects h3 a {
+    color: #FF008C;
+  }
+  
+  .footer .pro_border .phone_number {
+    text-align: right;
+  }
+  
+ 
+  
+  .footer .pro_border .phone_number h3 {
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+  }
+  
+  .footer .pro_border .phone_number a {
+    color: #C7C7C7;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  
+
+    .footer .footer_top {
+    padding-top: 150px;
+    padding-bottom: 40px;
+  }
+  
+  
+  .footer .footer_top .footer_widget .footer_title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+  }
+  
+  .footer .footer_top .footer_widget .footer_logo {
+    font-size: 22px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+  }
+  
+ 
+  .footer .footer_top .footer_widget p {
+    color: #777777;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 36px;
+  }
+  
+.footer .footer_top .footer_widget p a {
+    color: #777777;
+  }
+  
+.footer .footer_top .footer_widget p a:hover {
+    color: #FF008C;
+  }
+  
+.footer .footer_top .footer_widget p.footer_text {
+    font-size: 16px;
+    color: #B2B2B2;
+    margin-bottom: 23px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+  
+.footer .footer_top .footer_widget p.footer_text a.domain {
+    color: #B2B2B2;
+    font-weight: 400;
+  }
+
+  .footer .footer_top .footer_widget p.footer_text a.domain:hover {
+    color: #FD955D;
+    border-bottom: 1px solid #FD955D;
+  }
+  
+ .footer .footer_top .footer_widget p.footer_text.doanar a {
+    font-weight: 500;
+    color: #B2B2B2;
+  }
+  
+ .footer .footer_top .footer_widget p.footer_text.doanar a:hover {
+    color: #FD955D;
+    border-bottom: 1px solid #FD955D;
+  }
+  
+  .footer .footer_top .footer_widget p.footer_text.doanar a.first {
+    margin-bottom: 10px;
+  }
+ .footer .footer_top .footer_widget ul li {
+    color: #919191;
+    font-size: 13px;
+    line-height: 42px;
+  }
+  
+ .footer .footer_top .footer_widget ul li a {
+    color: #919191;
+    font-weight: 400;
+  }
+  
+.footer .footer_top .footer_widget ul li a:hover {
+    color: #FFC000;
+  }
+  
+.footer .footer_top .footer_widget .newsletter_form {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+ .footer .footer_top .footer_widget .newsletter_form input {
+    width: 100%;
+    height: 50px;
+    background: #333333;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+  }
+  
+.footer .footer_top .footer_widget .newsletter_form input::placeholder {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .footer .footer_top .footer_widget .newsletter_form input:focus {
+    outline: none;
+  }
+  
+  .footer .footer_top .footer_widget .newsletter_form button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    border: none;
+    font-size: 14px;
+    color: #000000;
+    background: #FFC000;
+    padding: 10px;
+    padding: 0 22px;
+    cursor: pointer;
+    border-radius: 0;
+    top: 0px;
+    right: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    font-weight: 900;
+  }
+  
+  .footer .footer_top .footer_widget .newsletter_text {
+    font-size: 14px;
+    color: #919191;
+    line-height: 26px;
+    margin-bottom: 40px;
+    margin-top: 50px;
+  }
+  
