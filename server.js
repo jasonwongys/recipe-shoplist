@@ -34,7 +34,7 @@ const db = require("./config/keys").mongoURI;
 //     .then(() => console.log("MongoDB connected"))
 //     .catch(err => console.log(err));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/test', { useNewUrlParser: true })
+mongoose.connect('mongodb://127.0.0.1:27017/test', { useNewUrlParser: true })
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
 
