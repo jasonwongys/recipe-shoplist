@@ -10,7 +10,7 @@ class Landing extends Component {
                 className="container-fluid"
                 id="backgroundImg"
             >
-                <div className="row">
+                <div className="row" style={{ height: "100vh" }}>
                     <div class="jumbotron" style={{ margin: "100px" }}>
                         <div className="container">
                             <h1 class="display-4">Hello, Foodies!</h1>

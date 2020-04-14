@@ -60,7 +60,7 @@ app.use("/api/users",users);
 app.use("/shoplist", shoplistRouter)
 app.use("/recipes",recipe);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "CLIENT", "build", "index.html"));
