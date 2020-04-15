@@ -65,7 +65,7 @@ class Login extends Component {
                     <div className="form-group row" style={{margin: "100px"}}>
                         
                         
-                        <div className="card card-signin" style={{ padding: "11.250px",height: "auto"}}>
+                        <div className="card card-signin" style={{ padding: "11.250px"}}>
                         <div className="card-body">
                         <Link to="/" className="col-sm-9 col-md-7 col-lg-5 mx-auto">
                         <i className="fas fa-backspace"></i> Back to home</Link>

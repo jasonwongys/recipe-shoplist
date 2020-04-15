@@ -34,28 +34,28 @@ class Dashboard extends Component {
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner d-block mx-auto align-items-center">
-              <div class="carousel-item active align-items-center flex-column p-4">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
                 <img class=" d-block w-100" src={veggie} alt="First slide"  />
-                <div class="carousel-caption">
-                                <h1 className="text-light display-3 ">Healthy lifestyle made easier</h1>
-                                <p className="text-light display-4">Search from millions of recipes available</p>
+                <div class="carousel-caption d-none d-md-block">
+                                <h1 className="text-light">Healthy lifestyle made easier</h1>
+                                <p className="text-light">Search from millions of recipes available</p>
                               </div>
                         </div>
               
-              <div class="carousel-item align-items-center flex-column p-4">
+              <div class="carousel-item ">
                 <img class="d-block w-100" src={pizza} alt="Second slide" />
-                <div class="carousel-caption">
-                                <h1 className="text-light display-3">Satisfy your cravings</h1>
-                                <p className="text-light display-4">All cuisines within your fingertips</p>
+                <div class="carousel-caption d-none d-md-block">
+                                <h1 className="text-light ">Satisfy your cravings</h1>
+                                <p className="text-light ">All cuisines within your fingertips</p>
                               </div>
               </div>
 
-              <div class="carousel-item align-items-center flex-column p-4">
+              <div class="carousel-item ">
                 <img class="d-block w-100" src={brunch} alt="Third slide" />
-                <div class="carousel-caption">
-                                <h1 className="text-dark display-3">Simplify your shopping list</h1>
-                                <p className="text-dark display-4">And save time with one our app</p>
+                <div class="carousel-caption d-none d-md-block">
+                                <h1 className="text-dark ">Simplify your shopping list</h1>
+                                <p className="text-dark">And save time with one our app</p>
                               </div>
               </div>
             </div>

@@ -10,7 +10,7 @@ const ShoppingList = props => (
     <tr>
         <td>{props.items.recipeName}</td>
         
-        <td>{props.ingredients.name} <img src={`https://spoonacular.com/cdn/ingredients_100x100/${props.ingredients.image}`}/></td>
+        <td className="text-dark">{props.ingredients.name} <img src={`https://spoonacular.com/cdn/ingredients_100x100/${props.ingredients.image}`}/></td>
         <td >{props.ingredients.amount} {props.ingredients.unit}</td>
         <td ><button onClick={()=> props.deleteItem(props.ingredients.id,props.ingredients)} className="btn btn-danger">Delete Item</button></td>
     </tr>
@@ -44,7 +44,7 @@ class ViewShoppingList extends Component {
             .then(res => {
                 this.setState({
                     recipes: res.data,
-                    ingredients: res.data.ingredients,
+                    ingredients: res.data.map(i => i.ingredients),
                     userid: this.props.auth.user.id
                 })
             })
@@ -55,7 +55,7 @@ class ViewShoppingList extends Component {
 
     render() {
 
-        console.log("Ingredient", this.state.ingredients)
+        console.log("Ingredient", [...this.state.ingredients])
         console.log("Recipes", this.state.recipes)
         console.log("UseriD", this.state.userid)
 
@@ -71,10 +71,10 @@ class ViewShoppingList extends Component {
 
         console.log("Filter user", filterUser);
 
-        let filter = filterUser.filter(i => {
+        let filter = filterUser.map(i => {
                 i.ingredients.map(j => {
-                    if(j.aisle === "Beverages"){
-                        return <li>{i}</li>
+                    if(j.name === "water"){
+                        return <li>{j}</li>
                     }
                 }
                 )});
