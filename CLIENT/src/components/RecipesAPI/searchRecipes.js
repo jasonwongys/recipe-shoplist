@@ -8,11 +8,11 @@ import { id, pw } from './api/Apikey'
 const Recipe = props => (
 
     <div className="col-sm-3" style={{ marginTop: "10px" }}>
-        <div className="card" style={{ backgroundSize: "contain",padding: "10px" }}>
+        <div className="card" style={{ backgroundSize: "contain" ,height:"600px" }}>
             <img src={props.image} className="card-img-top" alt="" style={{ height: "50%" }} />
             
-                <div className="card-body mb-3" style={{ paddingBottom: "20px" }}>
-                    <h5 className="card-title text-dark mb-5"><strong >{props.recipeName}</strong></h5>
+                <div className="card-body mb-2" style={{ height:"350px",padding:"15px" }}>
+                    <h5 className="card-title text-dark mb-2"><strong >{props.recipeName}</strong></h5>
                 </div>
                 <div className="card-footer mb-3">
                     <i class="fas fa-clock"></i>  <small className="">Ready in minutes {props.readyinMins}</small>

@@ -36,10 +36,12 @@ class Dashboard extends Component {
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class=" d-block w-100" src={veggie} alt="First slide"  />
-                <div class="carousel-caption d-none d-md-block">
+                <img className=" d-block w-100" src={veggie} alt="First slide"  />
+                <div className="carousel-caption d-none d-md-block">
+                          
                                 <h1 className="text-light">Healthy lifestyle made easier</h1>
                                 <p className="text-light">Search from millions of recipes available</p>
+                    
                               </div>
                         </div>
               

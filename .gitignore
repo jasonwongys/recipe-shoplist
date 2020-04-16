@@ -22,7 +22,8 @@
 .idea/
 .vscode/
 
-.Apikey.js
+./CLIENT/src/components/RecipesAPI/api/Apikey.js
+
 
 npm-debug.log*
 yarn-debug.log*

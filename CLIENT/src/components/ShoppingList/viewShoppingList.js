@@ -8,11 +8,11 @@ import { logoutUser } from "../../actions/authActions";
 const ShoppingList = props => (
     
     <tr>
-        <td>{props.items.recipeName}</td>
+        <td className="text-dark">{props.items.recipeName}</td>
         
         <td className="text-dark">{props.ingredients.name} <img src={`https://spoonacular.com/cdn/ingredients_100x100/${props.ingredients.image}`}/></td>
-        <td >{props.ingredients.amount} {props.ingredients.unit}</td>
-        <td ><button onClick={()=> props.deleteItem(props.ingredients.id,props.ingredients)} className="btn btn-danger">Delete Item</button></td>
+        <td className="text-dark">{props.ingredients.amount} {props.ingredients.unit}</td>
+        <td className="text-dark"><button onClick={()=> props.deleteItem(props.ingredients.id,props.ingredients)} className="btn btn-danger">Delete Item</button></td>
     </tr>
 
 )
